@@ -1,0 +1,2613 @@
+@font-face {
+  font-family: "WebSalesDefault";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../Fonts/ProximaSoft.woff");
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+h2,
+div.h2 {
+  border: none;
+  font-size: 2.25rem;
+  font-weight: normal;
+  margin: 0;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 600;
+  line-height: 1;
+}
+
+fieldset {
+  border: none !important;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+legend {
+  border: none !important;
+  display: none !important;
+}
+
+form,
+table {
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar .card {
+  margin: 2em;
+}
+
+.sidebar table {
+  width: 100%;
+}
+
+.content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoImg {
+  width: 120px;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    height: 80px;
+  }
+
+  .sidebar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background-color: unset !important;
+  }
+
+  .content .card {
+    margin: 2em;
+    max-width: 1024px;
+  }
+
+  .card {
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    padding: 1.5em 2em;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #root {
+    background: none !important;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .card {
+    padding: 0.75em 0.75em;
+  }
+
+  .k-button:not([class~="k-window-action"]):not([id$="_btn_modal"]) {
+    width: 100%;
+  }
+}
+
+.k-icon.k-i-calendar {
+  top: 0.25em;
+}
+
+.k-icon.k-i-cart {
+  margin-right: 6px;
+}
+
+.k-icon.k-i-close {
+  margin-right: 0.5em;
+}
+
+.k-select {
+  border: none !important;
+}
+
+@media screen and (max-width: 320px) {
+  .k-calendar {
+    font-size: 65%;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 360px) {
+  .k-calendar {
+    font-size: 80%;
+  }
+}
+@media screen and (min-width: 361px) {
+  .k-calendar {
+    font-size: 100%;
+  }
+}
+
+.k-calendar .k-today,
+.k-calendar .k-state-selected {
+  box-shadow: none !important;
+}
+
+.k-calendar .k-today:not(.k-state-selected) {
+  background: none !important;
+  border: none !important;
+}
+
+.k-calendar .k-state-selected {
+  border: none !important;
+}
+
+.k-textbox {
+  width: 100%;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.k-textbox.password {
+  float: left;
+  width: 16em !important;
+}
+
+.k-space-left {
+  padding-left: 0.7em !important;
+}
+
+.k-space-left .k-icon {
+  left: 0.15em !important;
+}
+
+.workarea {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.all {
+  width: 100%;
+}
+
+.header {
+}
+
+.sidebar {
+  font-weight: normal !important;
+  padding: 0 1% 0 1%;
+  vertical-align: top;
+}
+.sidebar > table {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  vertical-align: top;
+}
+.sidebar td {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.workarea {
+  text-align: left;
+  vertical-align: top;
+}
+
+.billing-addr {
+  font-size: 90%;
+  padding-top: 2em;
+}
+.cust-dtl-cell-2,
+.cust-dtl-cell-3 {
+  float: left;
+  text-align: left;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-top: 0.5em !important;
+}
+div.customer-info-label,
+div.voucher-info-label {
+  font-size: 80%;
+  padding: 0 0 1em 0;
+  width: 100%;
+}
+div.customer-info-label:not(.top),
+div.voucher-info-label:not(.top) {
+  padding-top: 2em;
+}
+.next-button {
+  margin-bottom: 2em;
+  text-align: center;
+}
+.welcome-back {
+  text-align: left;
+  padding: 1em 0;
+}
+.welcome-back div {
+  float: left;
+  margin: 0 0.5em 0 0;
+  white-space: pre-wrap;
+  max-width: calc(100% - 2.5em);
+}
+.welcome-back img {
+  float: left;
+  height: 2em;
+  width: 2em;
+}
+
+#GetMobileVerificationCode {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+#CustomerDetails,
+#PaymentDetails,
+#NewPlanCreditCheck {
+  width: 100%;
+  margin: 0 auto;
+}
+#PlanCommit h2 {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center !important;
+}
+#PlanCommit h3,
+#PlanCommit p {
+  font-weight: normal;
+}
+#PlanOutcome {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#PlanOutcome img {
+  height: 5em;
+  margin: 1em auto;
+  width: 5em;
+}
+#PlanOutcome .pay-today {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  height: 2em;
+  margin: 2em auto;
+  max-width: 20em;
+  padding: 0.6em 0 0 0;
+  width: 100%;
+}
+#PlanOutcome .pay-today .text {
+  float: left;
+}
+#PlanOutcome .pay-today .amount {
+  float: right;
+  font-weight: bold;
+}
+#ResendMsg {
+  margin-bottom: 1em;
+}
+#ResendMsg,
+#VerificationMsg {
+  float: left;
+  font-size: 90%;
+  padding-top: 0.5em;
+  width: 100%;
+}
+#VerificationMsg {
+  white-space: pre-wrap;
+}
+#VerificationDetails {
+  margin-top: 0.5em;
+  width: 100%;
+}
+.verification-label {
+  padding: 0.5em 0 0.5em 0 !important;
+}
+
+@media screen and (max-width: 900px) {
+  .credit-check.k-button {
+    margin-bottom: 2em !important;
+  }
+  .cust-dtl-cell-2,
+  .cust-dtl-cell-3,
+  .next-button {
+    width: 100% !important;
+  }
+  .plan-type-container {
+    width: 100% !important;
+  }
+  .plan-type-container.align-right {
+    margin-bottom: 2em !important;
+  }
+  .workarea {
+    padding: 0 0.25em 0 0.25em;
+    width: calc(100% - 0.5em);
+  }
+  #NewPlanStages > .k-tabstrip-items {
+    display: none;
+  }
+  #PlanSelection > table {
+    width: 100%;
+  }
+  #VerificationDetails .x1,
+  #VerificationDetails .x2 {
+    padding-bottom: 0.5em;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  form,
+  form.fieldset {
+    text-size-adjust: none !important;
+  }
+  .k-button:not([class~="k-window-action"]) {
+    font-size: 100% !important;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .workarea {
+    padding: 0 0.25em 0 0.25em;
+    width: calc(65% - 0.5em);
+  }
+  .credit-check.k-button {
+    margin-bottom: 2em !important;
+  }
+  .cust-dtl-cell-2 {
+    width: calc(50% - 0.5em) !important;
+  }
+  .cust-dtl-cell-2.x1 {
+    padding-right: 0.5em !important;
+  }
+  .cust-dtl-cell-2.x2 {
+    padding-left: 0.5em !important;
+  }
+  .cust-dtl-cell-3 {
+    width: calc(33.33% - 0.6667em - 1px) !important;
+  }
+  .cust-dtl-cell-3.x1 {
+    padding-right: 0.5em !important;
+  }
+  .cust-dtl-cell-3.x2 {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+  }
+  .cust-dtl-cell-3.x3 {
+    padding-left: 0.5em !important;
+  }
+  .next-button.max-width {
+    width: 100% !important;
+  }
+  .next-button:not(.max-width) {
+    width: auto !important;
+  }
+  .next-button.center {
+    margin: 0 auto;
+  }
+  .next-button:not(.center) {
+    float: right;
+  }
+  .plan-type-container.align-center {
+    width: 4em !important;
+    padding-top: 3em;
+  }
+  .plan-type-container.align-left {
+    width: calc(45% - 2em) !important;
+    padding-left: 5%;
+  }
+  .plan-type-container.align-right {
+    width: calc(45% - 2em) !important;
+    padding-right: 5%;
+    margin-bottom: 2em !important;
+  }
+  #NewPlanStages .k-content > div > table {
+    margin: 0 auto;
+  }
+  #NewPlanStages > .k-tabstrip-items {
+    margin: 1em 0 2em 0;
+  }
+  #PaymentDetails {
+    max-width: 500px !important /* MaxWorkAreaWidthSmall */;
+  }
+  #PlanSelection > table {
+    max-width: 75%;
+  }
+  #VerificationDetails .x1 {
+    float: left;
+    width: calc(60% - 0.5em);
+    padding-bottom: 0.5em;
+  }
+  #VerificationDetails .x2 {
+    float: right;
+    width: calc(40% - 0.5em);
+  }
+}
+
+#AbandonNewPlan {
+  font-size: 90% !important;
+  font-weight: 900;
+  margin-top: 0;
+}
+
+#NewCustomer td {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#NewCustomerDetails ul,
+.account-form ul {
+  margin-top: 0.5em;
+}
+
+#NewCustomerDetails label {
+  white-space: pre-wrap;
+  margin-bottom: 1em;
+}
+
+#PlanSelection {
+  margin: 0;
+  padding: 0;
+}
+
+#PlanSelection > table {
+  border-spacing: 0;
+  margin: 0 auto;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.fit-content-width {
+  width: 1px;
+  overflow: visible;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.rotate-90 {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+}
+
+.contact-us::after {
+  content: "Contact Us";
+}
+.privacy-policy::after {
+  content: "Privacy Policy";
+}
+.t-and-c::after {
+  content: "Terms and Conditions";
+}
+
+.consent-inline .t-and-c {
+  margin-right: 0.7em;
+}
+
+#t-and-c,
+#privacy-policy,
+#contact-us {
+  padding: 0;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-break-word {
+  word-wrap: break-word;
+}
+
+.text-normal {
+  font-weight: normal;
+}
+
+.text-normal-size {
+  font-size: 100%;
+}
+
+.text-large {
+  font-size: 125%;
+}
+
+.text-large-aligned {
+  font-size: 125%;
+  margin-top: -0.125em;
+}
+
+.text-large-x {
+  font-size: 150%;
+}
+
+.text-large-xx {
+  font-size: 175%;
+}
+
+.text-medium {
+  font-size: 90%;
+}
+
+.text-small {
+  font-size: 80%;
+}
+
+.text-small-x {
+  font-size: 70%;
+}
+
+.text-wrap {
+  white-space: pre-wrap;
+}
+
+.clear-fix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  box-shadow: none !important;
+  -webkit-box-shadow: none;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+input {
+  height: 2em !important;
+}
+
+input,
+textarea {
+  border: none;
+  font-weight: normal;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+.align-center {
+  text-align: center !important;
+}
+.align-justify {
+  text-align: justify !important;
+}
+.align-left {
+  text-align: left !important;
+}
+.align-middle {
+  vertical-align: middle !important;
+}
+.align-right {
+  text-align: right !important;
+}
+.align-top {
+  vertical-align: top !important;
+}
+
+.disp-currency,
+.disp-numeric,
+.disp-percentage {
+  text-align: right !important;
+}
+.disp-date,
+.disp-date-time,
+.disp-day-date,
+.disp-day-date-time,
+.disp-month-year,
+.disp-year,
+.disp-time {
+  text-align: right !important;
+}
+.disp-year-month {
+  text-align: left !important;
+}
+
+.grid-bool {
+  text-align: center !important;
+}
+.grid-currency,
+.grid-numeric,
+.grid-percentage {
+  text-align: right !important;
+}
+.grid-date,
+.grid-time,
+.grid-year {
+  text-align: center !important;
+}
+.grid-date-time,
+.grid-day-date,
+.grid-day-date-time,
+.grid-month-year {
+  text-align: right !important;
+}
+.grid-month,
+.grid-year-month {
+  text-align: left !important;
+}
+.grid-text {
+  text-align: left !important;
+}
+
+.amount {
+  font-size: 100% !important;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: right !important;
+  vertical-align: middle;
+}
+
+.crossed {
+  text-decoration: line-through !important;
+}
+
+.new-plan {
+  margin: 0px;
+  width: 100%;
+}
+
+.plan-type.k-item {
+  padding-bottom: 0 !important;
+}
+
+.plan-type-container {
+  float: left;
+  margin-top: 1em;
+}
+
+.plan-type-container .k-button {
+  padding-top: 1.5em !important;
+}
+
+.plan-type-text {
+  font-size: 90%;
+  white-space: pre-wrap;
+}
+
+.start-date {
+  padding: 0 !important;
+  width: 7.5em !important;
+}
+
+.start-date-container {
+  float: right;
+}
+
+#StartDate {
+  min-width: 10em;
+}
+
+.grid-title {
+  float: left;
+  font-size: larger;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.k-grid table {
+  font-size: small;
+  font-weight: normal;
+  table-layout: fixed;
+}
+
+.k-grid th {
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.k-grid .k-button {
+  min-width: 0 !important;
+  vertical-align: middle;
+  font-size: 0.5em;
+}
+
+.k-grid .k-button.k-grid-Destroy {
+  float: right;
+}
+
+.k-button:not([class~="k-window-action"]) {
+  border-radius: 0.25em;
+  font-size: 105%;
+  font-weight: 600;
+  min-height: 3em;
+  padding: 0.75em 1em 0.75em 1em;
+  vertical-align: middle;
+}
+
+.k-picker-wrap {
+  background: none !important;
+}
+
+.k-datepicker,
+.k-datetimepicker {
+  padding: 0;
+}
+
+.k-dropdown-wrap,
+.k-picker-wrap {
+  border: none !important;
+}
+
+.k-numerictextbox,
+.k-textbox,
+textarea {
+  border: none;
+}
+
+.k-numerictextbox input,
+.k-textbox input,
+textarea input {
+  background: none;
+  border: none;
+}
+
+.no-sides {
+  margin: 0;
+  padding: 0;
+}
+
+/* main layout
+----------------------------------------------------------*/
+.content-wrapper {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+#body,
+footer,
+header {
+  clear: both;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#body {
+  /*height: 100%;*/
+}
+
+footer {
+  border-top-width: 0px;
+  border-top-style: solid;
+  bottom: 0;
+  font-size: 0;
+  height: 0;
+  position: absolute;
+}
+
+header table,
+footer table {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+header td,
+footer td {
+  vertical-align: middle;
+}
+
+footer td {
+  text-align: center;
+}
+
+.footer {
+  background-color: transparent;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  float: left;
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+  height: 1.5em; /* synchronize with the height of #ViewCustomerDetails */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.hgap {
+  margin-top: 0.5em;
+}
+
+.logo {
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  cursor: pointer;
+  float: left;
+}
+
+.main-content {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* content */
+
+.label-for,
+#CustomerDetails .form-text label {
+  font-size: 80%;
+  font-weight: normal;
+  margin: 0 !important;
+  padding: 0.5em 0 0 0 !important;
+  text-align: left !important;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.consent-inline label {
+  font-size: 75%;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.label-for {
+  display: table-cell;
+}
+
+#CustomerDetails > tbody > tr > td {
+  text-align: left;
+}
+
+.resolver {
+  font-weight: normal;
+}
+
+td.resolver {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.account-form {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.k-tabstrip {
+  border: none !important;
+  width: 100%;
+}
+
+.k-tabstrip > .k-content {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.k-tabstrip-items {
+  border: none !important;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: none;
+}
+
+.k-tabstrip-items * {
+  border: none !important;
+}
+
+#NewPlanStages > .k-tabstrip-items,
+#NewPlanStages > .k-content > div {
+  width: calc(100% - 2px);
+}
+
+.k-tabstrip .k-item {
+  border: none !important;
+  margin-bottom: 0 !important;
+  vertical-align: bottom;
+}
+
+.k-widget {
+  font-weight: normal;
+}
+
+.k-panelbar {
+  border: none !important;
+}
+
+.k-window-content {
+  padding-bottom: 0.75em !important;
+}
+
+.k-window-title {
+  font-size: 90% !important;
+}
+
+#NewPlanTypeTabs .k-item {
+  width: 50%;
+}
+
+#NewPlanTypeTabs .k-item .k-link {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+/* info and errors */
+
+.static-msg {
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px 0 5px 0;
+}
+
+.static-msg table {
+  border: none;
+  width: 100%;
+}
+
+/* styles for validation helpers */
+
+.field-validation-error {
+  font-size: 80%;
+  font-weight: normal;
+  white-space: pre-wrap;
+}
+
+.field-validation-valid {
+  display: none;
+}
+
+.icon {
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  height: 1em;
+  width: 1em;
+}
+
+.close {
+  padding-left: 0;
+  vertical-align: middle !important;
+}
+
+.close .k-icon {
+  position: relative;
+  left: -0.25em;
+  top: -0.075em;
+}
+
+.close .text {
+  position: relative;
+  left: -0.75em;
+}
+
+input.input-validation-error {
+  border: 0 none;
+}
+
+.max-height {
+  height: 100%;
+}
+
+.max-size {
+  width: 100%;
+  height: 100%;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.currency,
+.numeric {
+  text-align: right !important;
+}
+
+td.stage-wrapper {
+  padding: 0 0 0.5em 0;
+  width: calc(100% - 1em) !important;
+}
+
+table.stage {
+  text-align: left !important;
+  width: 100%;
+}
+
+td.stage {
+  border: 2px solid;
+  border-left: none;
+  height: 3em;
+  width: 0.5em;
+}
+
+td.stage:first-child {
+  border-left: 2px solid;
+}
+
+td.stage.done {
+  border: none;
+}
+
+td.stage.active {
+  width: calc(100% - 3em);
+}
+
+td.stage h2 {
+  background-position: 0.5em center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-left: 2.25em !important;
+}
+
+.validation-summary-errors {
+  display: block;
+  float: left;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+  padding: 0.5em;
+  text-align: left;
+  vertical-align: middle;
+  white-space: pre-wrap;
+}
+
+.validation-summary-valid {
+  display: none;
+}
+
+.validation-tag {
+  padding-left: 0;
+}
+
+.waiting {
+  margin: auto;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.waiting.off {
+}
+
+.waiting.on {
+  background: url(../Images/ajax-loader.gif) center no-repeat;
+  background-size: 100% 100%;
+}
+
+/* tables
+----------------------------------------------------------*/
+
+td.line-spacing {
+  padding: 0.25em 0 0.25em 0;
+}
+
+button.credit-check {
+  float: left;
+  height: 100%;
+  margin-top: 0.5em;
+  white-space: pre-wrap;
+  width: 10em;
+}
+
+.credit-check-button-container {
+  width: 45%;
+}
+
+.deposit-explained {
+  background: none;
+  font-size: 75%;
+  font-weight: normal;
+  margin: 0 0 1em 0;
+  padding: 1em 0 1em 0 !important;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.deposit-explained div {
+  padding: 0 1em 0 1em;
+}
+
+.get-mobile-app-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.get-mobile-app-cell {
+  padding: 1em;
+  text-align: left;
+  vertical-align: middle;
+  width: 100%;
+}
+.get-mobile-app-link {
+  text-decoration: none;
+}
+.get-mobile-app-icon {
+  float: left;
+}
+.get-mobile-app-note {
+  float: left;
+  font-size: smaller;
+  font-style: italic;
+  max-width: 25em;
+  text-align: left;
+  width: 100%;
+}
+.get-mobile-app-text {
+  float: left;
+  padding: 1.25em 0 0 1em;
+}
+
+.padded-separator-container {
+  height: 0.66em;
+  border-bottom: 1px solid;
+  margin: 1em 0 1.75em 0;
+  text-align: center;
+}
+
+.padded-separator-text {
+  font-weight: bold;
+  padding: 0 0.25em;
+}
+
+NewPlan_CreditCheckApprovalGuide {
+  font-size: 0.6em;
+  position: absolute;
+  bottom: 0;
+  margin-right: 2px;
+}
+#NewPlan_CreditCheckApprovalGuide table,
+#NewPlan_CreditCheckApprovalGuide td {
+  border: 2px solid lightgray;
+  vertical-align: middle;
+}
+#NewPlan_CreditCheckApprovalGuide td.head {
+  vertical-align: bottom;
+}
+
+.k-panelbar {
+  font-weight: bold;
+  height: 100%;
+}
+
+.large-button-caption {
+  padding-top: 1em;
+}
+
+.large-button-details {
+  padding: 1em 0 1em 2em;
+}
+
+.payment-interval {
+  border: none;
+  cursor: default;
+  float: left;
+  height: 2.5em;
+  margin: 0;
+  padding: 0.5em 0 0.5em 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.payment-note {
+  font-size: 60%;
+  font-weight: normal;
+  margin: 0 !important;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.payment-note.mark {
+  vertical-align: middle;
+}
+.payment-note.mark.high {
+  font-size: 120%;
+}
+.payment-note.mark:not(.high) {
+  font-size: 150%;
+}
+
+.payment-note.expd.foot .mark {
+  font-size: 200%;
+}
+.payment-note.expd.foot .mark::before,
+.payment-note.expd.mark::before {
+  content: "*";
+}
+.payment-note.fees.foot .text {
+  margin: 0;
+  padding: 1em 0 2em 0;
+}
+.payment-note.high.foot .mark {
+  font-size: 200%;
+}
+.payment-note.high.foot .mark::before,
+.payment-note.high.mark::before {
+  content: "^";
+}
+
+.payment-count {
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.payment-count.one-off {
+}
+
+.payment-units {
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.payment-units.payment-months {
+}
+
+.view-customer-details {
+  height: calc(100% - 1.5em); /* sync with the height of .footer */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.view-customer-details td {
+  vertical-align: top;
+}
+.view-customer-details .left-cell {
+  width: 75%;
+}
+.view-customer-details .right-cell {
+  width: 25%;
+}
+
+@media screen and (max-width: 320px) {
+  .payment-count {
+    font-size: 150%;
+  }
+  .payment-count.one-off {
+    font-size: 125%;
+  }
+  .payment-units {
+    font-size: 90%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .payment-count {
+    font-size: 150%;
+  }
+  .payment-count.one-off {
+    font-size: 125%;
+  }
+}
+@media screen and (min-width: 361px) {
+  .payment-count {
+    font-size: 175%;
+  }
+  .payment-count.one-off {
+    font-size: 150%;
+  }
+}
+
+#IntervalTypes {
+  padding: 0 0 0.5em 0;
+}
+
+#IntervalTypes .k-content button {
+  margin-top: 0.5em;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+#IntervalTypes .k-content button > div {
+  float: left;
+  font-size: 80%;
+  width: 33.33%;
+}
+
+table.plan-option {
+  border-spacing: 0;
+  height: 100%;
+  width: 100%;
+}
+
+td.plan-option {
+  border: none;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+td.plan-option p.break {
+  height: 1em;
+  margin: 0;
+  width: 100%;
+}
+
+td.plan-option p.break.transparent {
+  height: 0.5em;
+}
+
+#PrintNewPlan td {
+  vertical-align: middle;
+}
+
+td.td-param {
+  margin: 0;
+  border: 0 none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+td.td-param.no-min-width {
+  min-width: unset;
+}
+
+#CustomerNotFound {
+  white-space: pre-wrap;
+}
+
+#LoginDisclaimer {
+  font-size: 80%;
+  padding: 1em 0 1em 0;
+  white-space: pre-wrap;
+}
+
+#PlanPeriodPayments {
+  margin: 0.5em 0 0 0;
+}
+
+#PlanPeriodPayments ul li .k-link {
+  padding: 0.2em;
+}
+
+/* Vouchers (see also .voucher-info-XXX next to .customer-info-XXX)
+------------------------------------------------------------------------*/
+
+.voucher-area {
+  display: inline-table;
+  float: left;
+  margin-bottom: 2em !important;
+}
+
+.voucher-code-cell {
+  width: calc(100% - 5.5em);
+  padding-right: 0.25em !important;
+  min-width: 60% !important;
+}
+
+#VoucherCode {
+  font-size: initial;
+  height: 2.55em !important;
+  line-height: 2.55em !important;
+  width: 100%;
+}
+
+.apply-voucher-cell {
+  max-width: 40% !important;
+  padding-top: 1.25em;
+  width: 5.5em;
+}
+
+#ApplyVoucher {
+  min-height: initial !important;
+  padding: 0.3em 0 0.25em 0;
+  width: 100%;
+}
+
+.messagediv {
+  background: no-repeat 0.25em center;
+  border: 1px solid #dddee2;
+  border-left-width: 0.25em;
+  -ms-border-radius: 0.25em;
+  border-radius: 0.3em;
+  display: flex;
+  margin: 0.25em 0 0 0;
+  min-height: 1.5em;
+  padding: 0.75em;
+  white-space: pre-wrap;
+}
+
+#PlanOutcome .messagediv {
+  display: inline-table;
+  margin-left: -1em;
+}
+
+@media screen and (max-width: 360px) {
+  #ApplyVoucher {
+    height: 2.5em;
+  }
+}
+@media screen and (min-width: 361px) {
+  #ApplyVoucher {
+    height: 2.25em;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .voucher-area {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1101px) {
+  #PlanSelection .voucher-area {
+    width: 55%;
+  }
+  #PlanOutcome .voucher-area {
+    width: 100%;
+  }
+}
+
+.messagediv.errordiv {
+  background-image: url(../Images/Risk.svg);
+  border-left-color: #fcd65e;
+}
+
+.messagediv.successdiv {
+  background-image: url(../Images/Success.svg);
+  border-left-color: #67cd9c;
+}
+
+.messagediv.infodiv {
+  background-image: url(../Images/Info.svg);
+  border-color: #7dc0ec;
+  width: 76%;
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+.messagediv .text {
+  margin: 0 0 0 1.25em;
+}
+
+#PlanOutcome .messagediv .text {
+  display: inline;
+  line-height: 1.5em;
+}
+
+/*Voucher Issue Animation*/
+@keyframes blink {
+  /**
+   * At the start of the animation the dot
+   * has an opacity of .2
+   */
+  0% {
+    opacity: 0.2;
+  }
+  /**
+   * At 20% the dot is fully visible and
+   * then fades out slowly
+   */
+  20% {
+    opacity: 1;
+  }
+  /**
+   * Until it reaches an opacity of .2 and
+   * the animation can start again
+   */
+  100% {
+    opacity: 0.2;
+  }
+}
+.issuevoucher {
+  margin: 0 auto;
+  font-size: 1.2em;
+  font-weight: normal;
+  line-height: 0.5em;
+}
+
+.issuevoucher .blink {
+  font-size: 2em;
+  /**
+   * Use the blink animation, which is defined above
+   */
+  animation-name: blink;
+  /**
+   * The animation should take 1.4 seconds
+   */
+  animation-duration: 1.4s;
+  /**
+   * It will repeat itself forever
+   */
+  animation-iteration-count: infinite;
+  /**
+   * This makes sure that the starting style (opacity: .2)
+   * of the animation is applied before the animation starts.
+   * Otherwise we would see a short flash or would have
+   * to set the default styling of the dots to the same
+   * as the animation. Same applies for the ending styles.
+   */
+  animation-fill-mode: both;
+}
+
+.issuevoucher .blink:nth-child(2) {
+  /**
+   * Starts the animation of the third dot
+   * with a delay of .2s, otherwise all dots
+   * would animate at the same time
+   */
+  animation-delay: 0.2s;
+}
+
+.issuevoucher .blink:nth-child(3) {
+  /**
+   * Starts the animation of the third dot
+   * with a delay of .4s, otherwise all dots
+   * would animate at the same time
+   */
+  animation-delay: 0.4s;
+}
+
+div.back-to-retailer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.k-tabstrip {
+  background-color: unset !important;
+}
+
+.k-content {
+  background-color: unset !important;
+}
+
+#IntervalTypes .k-button {
+  border-width: 2px;
+}
+
+#IntervalTypes .k-button {
+  display: flex;
+}
+
+#IntervalTypes .k-button:hover {
+  color: unset !important;
+}
+
+#IntervalTypes .k-button div {
+  flex: 1;
+}
+
+#IntervalTypes .k-button div.payment-checked {
+  flex: 0 1 30px;
+}
+
+#IntervalTypes .k-button.k-state-selected div.payment-checked::after {
+  content: "\e118";
+  float: right;
+  font-family: "WebComponentsIcons";
+}
+
+.cc-window {
+  font-size: 0.875rem;
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px #bbb solid;
+}
+
+.k-chart .k-navigator-hint .k-scroll {
+  background: #2864ff;
+}
+
+.k-primary,
+.k-autocomplete.k-header,
+.k-dropdown-wrap.k-state-active,
+/*.k-picker-wrap.k-state-active,*/
+.k-numeric-wrap.k-state-active,
+.k-numeric-wrap .k-link.k-state-selected,
+.k-menu .k-link.k-state-active,
+.k-multiselect.k-state-focused.k-state-border-up .k-button,
+.k-multiselect.k-state-focused.k-state-border-down .k-button,
+.k-dropdown-wrap.k-state-default.k-state-active,
+/*.k-picker-wrap.k-state-default.k-state-active,*/
+.k-splitbar.k-state-focused,
+.k-marquee-color,
+.k-progressbar .k-state-selected,
+.k-toolbar .k-overflow-anchor.k-state-border-down,
+.k-toolbar .k-overflow-anchor.k-state-border-up,
+.k-slider-selection,
+.k-draghandle,
+.k-treeview .k-state-selected,
+.k-panelbar > li > .k-state-selected,
+.k-panelbar > li > .k-state-selected.k-state-hover,
+.k-panelbar > li.k-state-default > .k-link.k-state-selected,
+.k-panelbar > li > .k-state-focused.k-state-hover,
+.k-webkit .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-ff .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-ie11 .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-edge .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-safari .k-pager-numbers.k-state-expanded .k-current-page .k-link {
+  background-color: #2864ff;
+  color: white;
+}
+
+.k-button:not([class~="k-window-action"]) {
+  display: block;
+}
+
+.k-button:active,
+.k-button.k-state-active .k-button-group .k-button:active,
+.k-button-group .k-button.k-state-active,
+.k-button-group > input[type="radio"]:checked + .k-button,
+.k-button-group > input[type="checkbox"]:checked + .k-button {
+  background-color: #2864ff;
+  border-color: #2864ff;
+  color: white;
+}
+
+/*input.k-textbox:focus,*/
+.k-primary,
+.k-button-group .k-button:active,
+.k-button-group .k-button.k-state-active,
+.k-button-group > input[type='radio']:checked + .k-button,
+.k-button-group > input[type='checkbox']:checked + .k-button,
+.k-draghandle,
+.k-draghandle:hover,
+.k-state-active,
+.k-state-active:hover,
+.k-active-filter,
+/*.k-tabstrip .k-state-active,*/
+.k-state-focused:not([class~='k-button']),
+.k-grouping-row .k-state-focused,
+.k-autocomplete.k-state-hover,
+.k-autocomplete.k-state-focused,
+.k-numeric-wrap.k-state-hover,
+.k-numeric-wrap.k-state-focused,
+.k-dropdown-wrap.k-state-hover,
+.k-dropdown-wrap.k-state-focused,
+.km-pane-wrapper .km-pane .k-mobile-list.k-filter-menu .k-space-right > input:focus,
+/*.k-tabstrip-items .k-state-active,*/
+/*.k-panelbar .k-tabstrip-items .k-state-active,*/
+.k-editor .k-tool:focus,
+.k-checkbox:active + .k-checkbox-label:before,
+.k-checkbox-label:active:before,
+.k-checkbox:checked:active + .k-checkbox-label:before,
+.k-checkbox:checked + .k-checkbox-label:active:before,
+.k-checkbox:focus + .k-checkbox-label:before,
+.k-checkbox:focus + .k-checkbox-label:hover:before,
+.k-multiselect.k-header.k-state-focused .k-button,
+.k-dropdown-wrap.k-state-default.k-state-active,
+.k-picker-wrap.k-state-default.k-state-active,
+.k-picker-wrap.k-state-default.k-state-active .k-select,
+.k-dropdown-wrap.k-state-default.k-state-active .k-select,
+.k-list > .k-item.k-state-focused,
+.k-treeview .k-in.k-state-focused,
+.k-splitbar.k-state-focused,
+.k-pager-numbers .k-state-selected,
+.k-progressbar .k-state-selected,
+.k-progressbar.k-progressbar-vertical .k-state-selected,
+.k-toolbar .k-overflow-anchor.k-state-border-down,
+.k-toolbar .k-overflow-anchor.k-state-border-up,
+.k-draghandle,
+.k-webkit .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-ff .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-ie11 .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-edge .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-safari .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-spreadsheet-pane .k-filter-range,
+.k-auto-fill,
+.k-spreadsheet-selection {
+  border-color: #2864ff;
+}
+
+.k-scheduler-weekview .k-scheduler-header th.k-today:before,
+.k-scheduler-workWeekview .k-scheduler-header th.k-today:before,
+.k-spreadsheet-pane .k-spreadsheet-column-header .k-selection-partial,
+.k-spreadsheet-pane .k-spreadsheet-column-header .k-selection-full {
+  border-bottom-color: #2864ff;
+}
+
+.k-split-button:focus > .k-button.k-split-button-arrow {
+  border-left-color: #2864ff;
+}
+
+.k-spreadsheet-pane .k-spreadsheet-row-header .k-selection-partial,
+.k-spreadsheet-pane .k-spreadsheet-row-header .k-selection-full {
+  border-right-color: #2864ff;
+}
+
+.k-scheduler-monthview .k-today:before {
+  border-top-color: #2864ff;
+}
+
+.k-listview > .k-state-focused,
+.k-listview > .k-state-focused.k-state-selected,
+.k-split-button:focus,
+.k-calendar .k-state-focused,
+.k-calendar .k-state-selected.k-state-focused,
+.k-grid-header th.k-state-focused,
+.k-grid td.k-state-focused,
+.k-auto-fill,
+.k-spreadsheet-selection,
+.k-spreadsheet-active-cell {
+  --box-shadow-color: #2864ff;
+  box-shadow-color: #2864ff;
+}
+
+.k-calendar .k-state-selected,
+.k-calendar .k-state-selected .k-link {
+  background-color: #2864ff;
+  color: white;
+}
+
+.k-link:link,
+.k-link:visited,
+.k-nav-current.k-state-hover .k-link,
+.k-today > .k-scheduler-datecolumn,
+.k-today > .k-scheduler-groupcolumn,
+.k-mediaplayer-toolbar .k-button.k-bare:active,
+.k-mediaplayer-toolbar .k-button.k-bare.k-state-active,
+.k-mediaplayer-toolbar .k-button.k-bare.k-state-active:hover,
+.k-upload .k-upload-selected,
+/*.k-tabstrip-items .k-state-hover .k-link,*/
+/*.k-tabstrip-items .k-state-active .k-link,*/
+.k-pager-numbers .k-state-selected,
+.k-treeview .k-state-selected,
+.k-scheduler-toolbar .k-nav-current .k-link,
+.k-gantt-toolbar .k-nav-current .k-link,
+.k-grid-header .k-link .k-icon.k-i-sort-asc-sm,
+.k-grid-header .k-link .k-icon.k-i-sort-desc-sm,
+.k-grid-header .k-link .k-sort-order,
+.k-draghandle.k-state-selected:hover,
+.k-editor-inline ::-moz-selection,
+.k-gantt .k-treelist .k-state-selected,
+.k-gantt .k-treelist .k-state-selected td,
+.k-gantt .k-treelist .k-alt.k-state-selected,
+.k-gantt .k-treelist .k-alt.k-state-selected > td,
+.k-grid .k-state-selected,
+.k-grid td.k-state-selected.k-state-focused,
+.k-list > .k-state-selected,
+.k-list > .k-state-highlight,
+.k-marquee-color,
+.k-panel > .k-state-selected,
+.k-panelbar .k-state-selected.k-state-hover,
+.k-ghost-splitbar-vertical,
+.k-ghost-splitbar-horizontal,
+.k-scheduler .k-scheduler-toolbar .k-state-selected,
+.k-scheduler .k-today.k-state-selected,
+.k-slider-selection,
+.k-spreadsheet .k-resize-handle,
+.k-spreadsheet .k-resize-hint-handle,
+.k-spreadsheet .k-resize-hint-marker,
+.k-spreadsheet .k-resize-hint-vertical .k-resize-hint-handle,
+.k-spreadsheet .k-resize-hint-vertical .k-resize-hint-marker,
+.k-spreadsheet-filter.k-state-active,
+.k-spreadsheet-formula-list .k-state-focused,
+.k-spreadsheet-popup .k-state-active,
+.k-state-selected,
+.k-state-selected:link,
+.k-state-selected:visited,
+.k-state-selected.k-line,
+.k-state-selected.k-task-milestone,
+.k-state-selected .k-task-summary-complete,
+.k-tool.k-state-selected,
+.k-toolbar .k-toggle-button.k-state-active,
+.k-toolbar .k-toggle-button:active,
+.k-toolbar .k-toggle-button:active:hover,
+.k-webkit .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-ff .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-ie11 .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-edge .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-safari .k-pager-wrap .k-pager-numbers .k-state-selected,
+.km-pane-wrapper .k-mobile-list .k-item.k-state-selected,
+.ktb-var-base {
+  background-color: #2864ff;
+  border-color: #2864ff;
+  color: white;
+}
+
+.k-draghandle.k-state-selected:hover,
+.k-editor .k-tool.k-state-selected,
+.k-list > .k-state-selected,
+.k-list > .k-state-highlight,
+.k-list > .k-state-selected,
+.k-marquee-color,
+.k-panel > .k-state-selected,
+.k-ghost-splitbar-vertical,
+.k-ghost-splitbar-horizontal,
+.k-scheduler .k-scheduler-toolbar .k-state-selected,
+.k-scheduler .k-today.k-state-selected,
+.k-scheduler-marquee:before,
+.k-scheduler-marquee:after,
+.k-state-selected,
+.k-state-selected:link,
+.k-state-selected:visited,
+.k-state-selected.k-task-milestone,
+.k-state-selected.k-task-single,
+.k-state-selected .k-task-summary-complete,
+.k-tiles li.k-state-selected,
+.k-tool.k-state-selected,
+.k-toolbar .k-toggle-button.k-state-active,
+.k-toolbar .k-toggle-button:active,
+.k-toolbar .k-toggle-button:active:hover {
+  border-color: #2864ff;
+}
+
+.k-listbox .k-drop-hint,
+.km-pane-wrapper .k-mobile-list .k-item.k-state-selected {
+  border-top-color: #2864ff;
+}
+
+.k-map .k-marker,
+.k-state-selected.k-line,
+.ktb-var-accent,
+.ktb-var-selected-background {
+  color: #2864ff;
+}
+
+body {
+  background-color: white;
+  color: #3c465a;
+}
+
+#root {
+  background-color: #f4f7ff;
+}
+
+.header {
+  background-color: white;
+}
+
+.card {
+  background-color: white;
+}
+
+.sidebar {
+  color: rgb(160, 160, 160);
+}
+
+#SidebarTitle {
+  border-bottom-color: rgb(208, 208, 208);
+}
+
+.k-window-title {
+  color: #3c465a;
+}
+
+a:hover {
+  color: #2864ff;
+}
+
+a:hover:not([disabled]) {
+  color: #2864ff;
+}
+
+h2,
+div.h2,
+.t-and-c {
+  color: #3c465a;
+}
+
+#PlanCommit h3,
+#PlanCommit p,
+#PlanOutcome h3,
+#PlanOutcome p {
+  color: #3c465a;
+}
+
+input,
+textarea,
+.k-widget {
+  color: #3c465a;
+}
+
+input[readonly],
+textarea[readonly],
+.k-textbox[readonly],
+.k-selectable.k-state-disabled,
+.read-only,
+#Customer_DateOfBirth[readonly] {
+  background-color: #f8ffe0;
+  color: #3c465a;
+}
+
+::selection {
+  background: #2864ff;
+  color: white;
+}
+
+::-moz-selection {
+  background: #2864ff;
+  color: white;
+}
+
+::-webkit-input-placeholder {
+  color: #3c465a;
+  font-style: italic;
+}
+::-moz-placeholder {
+  color: #3c465a;
+  font-style: italic;
+} /* FF 19+ */
+:-moz-placeholder {
+  color: #3c465a;
+  font-style: italic;
+} /* FF ^18 */
+:-ms-input-placeholder {
+  color: #3c465a;
+  font-style: italic;
+} /* IE 10+ */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #3c465a;
+}
+
+.k-button {
+  background-color: #2864ff;
+  border-color: #2864ff;
+  color: white;
+}
+
+.k-button:not(:hover):not(:active):not(:focus):not(.k-state-active):not(.k-state-focused):not(.k-state-selected)
+  .plan-type {
+  color: rgb(160, 160, 160);
+}
+
+.k-button:hover:not([disabled]),
+.k-button:active,
+.k-button.k-state-active,
+.k-button:focus,
+.k-button.k-state-focused,
+.k-button.k-state-selected {
+  background-color: #3d73ff;
+  border-color: #3d73ff;
+  color: white;
+}
+
+.k-button.k-state-disabled,
+.k-button.k-state-disabled:active,
+.k-button.k-state-disabled:focus,
+.k-button.k-state-disabled:hover,
+.k-button.k-state-disabled:hover:active,
+.k-button[disabled],
+.k-button[disabled]:active,
+.k-button[disabled]:focus,
+.k-button[disabled]:hover,
+.k-button[disabled]:hover:active,
+.k-state-disabled .k-button,
+.k-state-disabled .k-button:active,
+.k-state-disabled .k-button:active:active,
+.k-state-disabled .k-button:focus,
+.k-state-disabled .k-button:hover {
+  background: none !important;
+  border-color: rgb(192, 192, 192);
+  color: rgb(192, 192, 192);
+}
+
+.k-dropdown,
+.k-dropdown .k-input {
+  background-color: rgb(232, 232, 232);
+
+  color: #3c465a;
+}
+
+.k-select {
+  background: none;
+}
+
+.k-dropdown,
+.k-picker {
+}
+
+.k-grid .k-state-focused,
+.k-grid .k-state-selected {
+  border-color: rgb(232, 232, 232);
+  color: #3c465a;
+}
+
+.k-input,
+.k-multiselect-wrap,
+.k-textbox > input,
+input.k-textbox,
+input.k-textbox:hover,
+textarea.k-textbox,
+textarea.k-textbox:hover,
+.k-textbox.k-space-left {
+  background-color: rgb(232, 232, 232);
+
+  color: #3c465a;
+}
+
+.k-input {
+  background-color: rgb(232, 232, 232);
+  color: #3c465a;
+}
+
+td.stage.done {
+  background-color: #2864ff;
+  color: white;
+}
+
+.k-item {
+  color: #3c465a;
+}
+
+.k-select {
+  background-color: rgb(160, 160, 160);
+  border: none !important;
+  color: #3c465a;
+}
+
+.k-tabstrip,
+.k-tabstrip .k-content,
+.customer-info-label,
+.voucher-info-label {
+  color: #3c465a;
+}
+
+.k-tabstrip .k-content.k-state-active {
+  color: #3c465a;
+}
+
+.k-tabstrip,
+.k-tabstrip .k-item {
+  background: none !important;
+}
+
+.k-tabstrip .k-item .k-link {
+  background: none !important;
+  border-top-color: transparent;
+  color: rgb(160, 160, 160);
+}
+
+.k-tabstrip .k-item.k-state-active .k-link {
+  color: rgb(232, 232, 232);
+}
+
+#NewPlanStages > .k-tabstrip-items > .k-item:not(.k-state-active) {
+  border-bottom-color: rgb(208, 208, 208);
+}
+
+:not(#NewPlanStages) > .k-tabstrip-items > .k-item:not(.k-state-active) {
+  border-bottom-color: transparent;
+}
+
+.k-tabstrip-items .k-item.k-state-active {
+  border-bottom-color: #2864ff;
+}
+
+.k-tabstrip .k-item.k-state-active .k-link,
+.k-tabstrip-items .k-state-active .k-link,
+.k-tabstrip-items .k-state-default:hover .k-link,
+.text-highlight {
+  color: #2864ff;
+}
+
+.k-icon.k-i-cart {
+  color: rgb(160, 160, 160);
+}
+
+.k-space-left .k-icon {
+  background: none;
+  color: rgb(160, 160, 160);
+}
+
+.k-calendar .k-footer .k-nav-today {
+  color: #2864ff;
+}
+
+.k-list-container .k-item.k-state-selected,
+.k-list-container .k-list-optionlabel.k-state-selected {
+  background-color: #2864ff;
+  border-color: #2864ff;
+  color: white;
+}
+
+.k-picker-wrap.k-state-hover,
+.k-picker-wrap.k-state-focused {
+  border: none;
+}
+
+.text-colour {
+  color: #3c465a;
+}
+
+.text-colour-brand {
+  color: #2864ff;
+}
+
+.text-colour-disabled {
+  color: rgb(192, 192, 192);
+}
+
+.text-colour-error {
+  color: #a9123d;
+}
+
+.text-colour-info {
+  color: #7dc0ec;
+}
+
+.text-colour-label {
+  color: #3c465a;
+}
+
+.text-colour-light {
+  color: rgb(160, 160, 160);
+}
+
+.text-colour-lighter {
+  color: rgb(208, 208, 208);
+}
+
+.text-colour-success {
+  color: #2864ff;
+}
+
+.text-colour-warning .text-warning {
+  color: #ffc000;
+}
+
+.validation-tag-na > .k-numerictextbox,
+.validation-tag-na > .k-textbox,
+.validation-tag-na > .k-widget,
+.validation-tag-na > textarea {
+  border-left: none;
+}
+
+.validation-tag-error > .k-numerictextbox,
+.validation-tag-error > .k-textbox,
+.validation-tag-error > .k-widget,
+.validation-tag-error > textarea {
+  border-left: 2px solid #a9123d;
+}
+
+.validation-tag-ok > .k-numerictextbox,
+.validation-tag-ok > .k-textbox,
+.validation-tag-ok > .k-widget,
+.validation-tag-ok > textarea {
+  border-left: 2px solid #2864ff;
+}
+
+.validation-tag-warn > .k-numerictextbox,
+.validation-tag-warn > .k-textbox,
+.validation-tag-warn > .k-widget,
+.validation-tag-warn > textarea {
+  border-left: 2px solid #ffc000;
+}
+
+.attention,
+.bad,
+.message-error {
+  color: #a9123d;
+}
+
+.good {
+  color: #2864ff;
+}
+
+.info {
+  color: #7dc0ec;
+}
+
+.error {
+  color: red;
+}
+
+.field-validation-error {
+  color: #a9123d;
+}
+
+.warning {
+  color: #3c465a;
+}
+
+.label-for,
+.payment-note.foot.fees,
+#CustomerDetails .form-text label {
+  color: #3c465a;
+  padding: 0.5em 0;
+  font-size: 75%;
+  font-weight: 500;
+  justify-content: space-between;
+  color: #3c465a;
+}
+
+.payment-note.foot.expd,
+.payment-note.foot.high {
+  color: #3c465a;
+}
+
+.padded-separator-text {
+  background-color: white;
+}
+
+.k-button:not(:hover):not(:active):not(:focus):not(.k-state-active):not(.k-state-focused):not(.k-state-selected):not([disabled])
+  .payment-units {
+  color: rgb(160, 160, 160);
+}
+
+.plan-type.k-item.k-state-hover .k-link {
+  background-color: rgb(232, 232, 232);
+  color: #3c465a;
+}
+
+td.stage {
+  background-color: white;
+  border-color: #3c465a;
+}
+
+td.stage:first-child {
+  border-left-color: #3c465a;
+}
+
+td.stage.done {
+  background-color: #2864ff;
+}
+
+.contact-us,
+.privacy-policy,
+.t-and-c {
+  color: #2864ff;
+}
+
+.validation-summary-errors:not(.warning) {
+  color: red;
+}
+
+.waiting {
+  background-color: white;
+}
+
+.get-mobile-app-container {
+  background-color: white;
+}
+
+h2,
+div.h2 {
+  color: #3c465a;
+}
+
+a {
+  color: #3c465a;
+}
+
+.all a {
+  color: #2864ff;
+}
+
+.all a:hover {
+  color: #3d73ff;
+}
+
+.btn-secondary {
+  border: 2px solid #38465b !important;
+  color: #38465b !important;
+  background-color: unset !important;
+}
+
+.btn-secondary:hover {
+  border: 2px solid #38465b !important;
+  background-color: #38465b !important;
+  color: #fff !important;
+}
+
+#IntervalTypes .k-button div {
+  color: #3c465a;
+}
+
+#IntervalTypes .k-button.k-state-selected div {
+  color: #2864ff;
+}
+
+#IntervalTypes .k-button.k-state-selected {
+  border-color: #2864ff;
+}
+
+#IntervalTypes .k-button.k-state-selected div.payment-months {
+  color: #3c465a;
+}
+
+#IntervalTypes .k-button.k-state-selected div.payment-total {
+  color: #3c465a;
+}
+
+#IntervalTypes .k-button {
+  background-color: white;
+  border-color: rgb(248, 248, 248);
+  color: unset !important;
+}
+
+/* #customSelect select {
+  border: 0;
+  color: #3c465a;
+  background: transparent;
+  font-size: 150%;
+  padding: 2px 10px;
+  width: 100%;
+  *width: 100%;
+  *background: rgb(232, 232, 232);
+  -webkit-appearance: none;
+  font-family: inherit;
+} */
+
+.App > table {
+  width: 100%;
+}
+
+/* #customSelect {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 0;
+  background: rgb(232, 232, 232) url("https://i.imgur.com/BEg9nUt.png")
+    no-repeat scroll right;
+} */
+
+.validation-tag-error > #customSelect {
+  border-left: 2px solid #a9123d;
+}
+
+.validation-tag-ok > #customSelect {
+  border-left: 2px solid #2864ff;
+}
+
+img {
+  max-width: 40%;
+  height: auto;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,600");
+
+:root {
+  --color-primary: #2864ff;
+  --color-eggplant: #3c465a;
+  --color-grey: #858b98;
+  --color-light_grey: #d8dade;
+  --color-lightest_grey: #ebecee;
+  --color-light_blue: #f4f7ff;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: var(--color-ocean);
+  font-weight: 500;
+}
+
+a:hover,
+a:visited:hover {
+  text-decoration: underline;
+  color: var(--color-ocean);
+}
+
+.button-container {
+  display: flex;
+  margin: 16px auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-container h3 {
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  overflow: hidden;
+  margin: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: none;
+  text-transform: capitalize;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 160px;
+}
+
+.button.large {
+  padding: 16px;
+}
+
+.button.medium {
+  padding: 12px;
+}
+
+.button.small {
+  font-size: 12px;
+  padding: 8px;
+}
+
+.button.widebutton {
+  width: 100%;
+}
+
+.button.autoleftbutton {
+  margin-left: auto;
+}
+
+.button.shrink20 {
+  width: 20%;
+}
+
+.button:active {
+  position: relative;
+  bottom: -1px;
+}
+
+.button:focus {
+  outline: 1px dotted #959595;
+  outline-offset: -4px;
+}
+
+.button.-primary {
+  color: white;
+  background: var(--color-primary);
+}
+
+.button.-primary.disabled {
+  color: var(--color-grey);
+  background: var(--color-light_grey);
+}
+
+.button.-primary.disabled:hover {
+  opacity: 1;
+  cursor: default;
+}
+
+.button.-primary.disabled:active {
+  position: relative;
+  bottom: 0px;
+}
+
+.button.-secondary {
+  color: var(--color-eggplant);
+  background: transparent;
+  border: 2px solid var(--color-eggplant);
+}
+
+@media screen and (min-width: 800px) {
+  .button.-secondary:hover {
+    color: white;
+    background-color: var(--color-eggplant);
+    opacity: 1;
+  }
+}
+
+.button.-tertiary {
+  color: var(--color-eggplant);
+  background: var(--color-tertiary);
+}
+
+@media screen and (min-width: 800px) {
+  .button.-tertiary:hover {
+    background: var(--color-lightest_grey);
+    opacity: 1;
+  }
+}
+
+.button.-link {
+  color: var(--color-eggplant);
+  background: var(--color-tertiary);
+}
+
+@media screen and (min-width: 800px) {
+  .button.-link:hover {
+    color: var(--color-primary);
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+
+.App {
+  margin: 10px;
+}
+
+#customSelect .css-bg1rzq-control {
+  border-radius: 0px;
+}
+
+#customSelect.validation-tag-error .css-bg1rzq-control {
+  border-left: 2px solid #a9123d;
+}
+
+#customSelect.validation-tag-ok .css-bg1rzq-control {
+  border-left: 2px solid #2864ff;
+}
+
+.validation-error-message {
+  color: #f44336;
+  margin: 0;
+  font-size: 0.75rem;
+  text-align: left;
+  margin-top: 8px;
+  min-height: 1em;
+  font-family: inherit;
+  line-height: 1em;
+}
+
+.react-padding {
+  padding: 0 0 0 10px;
+}
