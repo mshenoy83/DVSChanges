@@ -189,7 +189,6 @@ table {
 }
 
 .k-textbox {
-  width: 100%;
   font-family: inherit;
   font-size: 100%;
 }
@@ -215,9 +214,6 @@ table {
 
 .all {
   width: 100%;
-}
-
-.header {
 }
 
 .sidebar {

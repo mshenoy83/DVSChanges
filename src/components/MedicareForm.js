@@ -9,9 +9,9 @@ class MedicareForm extends React.Component {
     super(props);
     this.state = {
       FormErrors: [],
-      MedicareNumber: "",
-      ReferenceNumber: "",
-      ValidUntil: "",
+      MedicareNumber: this.props.MedicareModel.MedicareNumber,
+      ReferenceNumber: this.props.MedicareModel.ReferenceNumber,
+      ValidUntil: this.props.MedicareModel.ValidUntil,
       MedicareNumberdivClass: "validation-tag-error",
       RefNumberDivClasses: "validation-tag-error",
       ValidUntilDivClasses: "validation-tag-error"

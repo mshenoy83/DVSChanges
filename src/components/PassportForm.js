@@ -8,7 +8,7 @@ class PassportForm extends React.Component {
     super(props);
     this.state = {
       FormErrors: [],
-      PassportNumber: "",
+      PassportNumber: this.props.PassportModel.PassportNumber,
       NumberdivClass: "validation-tag-error"
     };
   }

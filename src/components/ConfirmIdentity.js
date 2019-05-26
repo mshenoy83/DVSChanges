@@ -10,6 +10,7 @@ class ConfirmIdentity extends React.Component {
         <Header Title="Confirm Your Details" />
         <br />
         <GridItem KeyProperty="Madhav" ValueProperty="Shenoy" />
+        <GridItem KeyProperty="Madhav" ValueProperty="Shenoy" />
       </React.Fragment>
     );
   }

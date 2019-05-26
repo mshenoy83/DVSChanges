@@ -66,6 +66,7 @@ class App extends React.Component {
 
   SaveDocumentModel = (documentModel, idtype) => {
     this.setState({ DVSModel: documentModel, IdSelected: idtype });
+    console.log(documentModel);
   };
 
   render() {

@@ -9,21 +9,22 @@ class Dropdown extends React.Component {
         return {
           label: model.name,
           value: model.name,
-          key: index
+          key: model.id
         };
       })
     };
-
-    // if (this.props.SelectedValue) {
-    //   inputprops.value = this.props.SelectedValue;
-    // }
 
     return (
       <div className="validation-tag">
         <label>State Issued</label>
         <br />
         <div id="customSelect" className={this.props.divclasses}>
-          <Select {...inputprops} />
+          <Select
+            value={inputprops.options.filter(
+              ({ value }) => value === this.props.SelectedValue
+            )}
+            {...inputprops}
+          />
         </div>
       </div>
     );

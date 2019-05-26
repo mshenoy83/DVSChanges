@@ -12,17 +12,17 @@ class SelectIdentityForm extends React.Component {
           DescriptionClass="welcome-back"
         />
         <Button
-          classes="button -secondary center medium widebutton"
+          classes="button -secondary center medium"
           buttonName="AU DRIVERS LICENSE"
           handleClick={this.props.HandleDLClick}
         />
         <Button
-          classes="button -secondary center medium widebutton"
+          classes="button -secondary center medium"
           buttonName="AU MEDICARE CARD"
           handleClick={this.props.HandleMCClick}
         />
         <Button
-          classes="button -secondary center medium widebutton"
+          classes="button -secondary center medium"
           buttonName="AU PASSPORT"
           handleClick={this.props.HandlePClick}
         />
