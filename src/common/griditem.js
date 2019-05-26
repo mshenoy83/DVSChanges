@@ -10,7 +10,7 @@ class GridItem extends React.Component {
     };
     return (
       <React.Fragment>
-        <hr style={{ backgroundColor: "#1e615d72" }} />
+        <hr style={{ borderColor: "#1e615d72", borderWidth: "0.5px" }} />
         <div style={divStyle}>
           <label>{this.props.KeyProperty}</label>
           <label style={labelstyle}>{this.props.ValueProperty}</label>

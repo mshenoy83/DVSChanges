@@ -7,6 +7,7 @@ import PassportForm from "./components/PassportForm.js";
 import ConfirmIdentity from "./components/ConfirmIdentity.js";
 
 import "./styles.css";
+import "./newstyles.css";
 
 class App extends React.Component {
   constructor(props) {

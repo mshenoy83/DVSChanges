@@ -1,13 +1,10 @@
 import React from "react";
 import Button from "./button.js";
 
-const divStyle = {
-  display: "flex"
-};
 class Footer extends React.Component {
   render() {
     return (
-      <div style={divStyle}>
+      <div style={{ display: "flex" }}>
         <Button
           classes="button -tertiary center medium"
           buttonName="Back"
