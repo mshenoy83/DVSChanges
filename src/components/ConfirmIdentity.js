@@ -26,7 +26,6 @@ class ConfirmIdentity extends React.Component {
   };
 
   onContinue = () => {
-    console.log(this.state);
     var errArray = [];
     if (!this.state.isAuthorisationChecked) {
       errArray.push(
