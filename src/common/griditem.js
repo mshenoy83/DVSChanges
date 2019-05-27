@@ -1,4 +1,5 @@
 import React from "react";
+import ArrayDisplay from "../common/arraydisplay.js";
 
 class GridItem extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class GridItem extends React.Component {
         <hr style={{ borderColor: "#1e615d72", borderWidth: "0.5px" }} />
         <div style={divStyle}>
           <label>{this.props.KeyProperty}</label>
-          <label style={labelstyle}>{this.props.ValueProperty}</label>
+          <ArrayDisplay Data={this.props.ValueProperty} />
         </div>
       </React.Fragment>
     );

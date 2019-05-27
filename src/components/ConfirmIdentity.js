@@ -52,7 +52,7 @@ class ConfirmIdentity extends React.Component {
       Gender: "Male",
       DOB: "28/04/1983",
       "Mobile Phone": "0422 027 397",
-      Address: "520 Collins Street,Melbourne VIC 300 Australia",
+      Address: ["520 Collins Street", "Melbourne VIC 3000"],
       "Drivers License": "12345678-VIC"
     };
     return (
