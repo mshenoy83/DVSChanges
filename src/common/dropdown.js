@@ -5,7 +5,7 @@ class Dropdown extends React.Component {
   render() {
     var inputprops = {
       onChange: this.props.handleChange,
-      options: this.props.data.map((model, index) => {
+      options: this.props.data.map(model => {
         return {
           label: model.name,
           value: model.name,

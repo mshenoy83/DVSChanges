@@ -81,8 +81,8 @@ class PassportForm extends React.Component {
             <tr>
               <td>
                 <div className="validation-summary-errors error">
-                  {this.state.FormErrors.map(txt => (
-                    <p>{txt}</p>
+                  {this.state.FormErrors.map((txt, idx) => (
+                    <p key={idx}>{txt}</p>
                   ))}
                 </div>
               </td>

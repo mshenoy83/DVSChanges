@@ -9,11 +9,23 @@ import ConfirmIdentity from "./components/ConfirmIdentity.js";
 import "./styles.css";
 import "./newstyles.css";
 
+window.Customer = {
+  Name: "Madhav Shenoy",
+  Email: "mshenoy83@gmail.com",
+  Gender: "Male",
+  DOB: "28/04/1983",
+  MobilePhone: "0422027397",
+  AddressLine1: "520 Collins Street",
+  AddressSuburb: "Melbourne",
+  AddressState: "VIC",
+  PostalCode: "3000"
+};
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      View: "ConfirmIdentity",
+      View: "",
       StateList: [],
       IdSelected: "",
       DVSModel: {
@@ -82,9 +94,17 @@ class App extends React.Component {
   };
 
   SaveDocumentModel = (documentModel, idtype) => {
-    this.setState({ DVSModel: documentModel, IdSelected: idtype });
-    console.log(documentModel);
-    this.setState({ View: "ConfirmIdentity" });
+    this.setState({
+      DVSModel: documentModel,
+      IdSelected: idtype,
+      View: "ConfirmIdentity"
+    });
+  };
+
+  componentDidCatch = (error, errorInfo) => {
+    console.log("App Errors below");
+    console.log(error);
+    console.log(errorInfo);
   };
 
   render() {
@@ -133,8 +153,7 @@ class App extends React.Component {
         componentView = (
           <ConfirmIdentity
             BackToSelection={this.handleBackButtonForms}
-            DvsModel={this.state.DVSModel.Passport}
-            onContinue={this.SaveDocumentModel}
+            DvsModel={this.state.DVSModel}
           />
         );
         break;

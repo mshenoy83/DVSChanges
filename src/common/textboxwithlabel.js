@@ -20,7 +20,7 @@ class TextBoxWithLabel extends React.Component {
             required={this.props.IsRequired}
             value={this.props.InputValue}
             options={this.props.cleaveOptions}
-            onChange={event => this.props.InputHandler(event.target.rawValue)}
+            onChange={event => this.props.InputHandler(event.target.value)}
           />
         </div>
       </div>

@@ -32,20 +32,59 @@ class ConfirmIdentity extends React.Component {
 
   render() {
     const model = {
-      Name: "Madhav Shenoy",
-      Email: "mshenoy83@gmail.com",
-      Gender: "Male",
-      DOB: "28/04/1983",
-      "Mobile Phone": "0422 027 397",
-      Address: ["520 Collins Street", "Melbourne VIC 3000"],
-      "Drivers License": "12345678-VIC"
+      Name: window.Customer.Name,
+      Email: window.Customer.Email,
+      Gender: window.Customer.Gender,
+      DOB: window.Customer.DOB,
+      "Mobile Phone": window.Customer.MobilePhone,
+      Address: []
     };
+
+    model.Address.push(window.Customer.AddressLine1);
+    if (window.Customer.AddressLine2) {
+      if (window.Customer.AddressLine2 !== "") {
+        model.Address.push(window.Customer.AddressLine1);
+      }
+    }
+
+    model.Address.push(
+      window.Customer.AddressSuburb +
+        " " +
+        window.Customer.AddressState +
+        " " +
+        window.Customer.PostalCode
+    );
+
+    switch (this.props.DvsModel.LicenseType) {
+      case "Drivers License":
+        model[this.props.DvsModel.LicenseType] =
+          this.props.DvsModel.DriversLicense.LicenseNumber +
+          "-" +
+          this.props.DvsModel.DriversLicense.LicenseState;
+        break;
+      case "Medicare Card":
+        model[this.props.DvsModel.LicenseType] = [
+          this.props.DvsModel.Medicare.MedicareNumber +
+            "-" +
+            this.props.DvsModel.Medicare.ReferenceNumber,
+          "Expiry " + this.props.DvsModel.Medicare.ValidUntil
+        ];
+        break;
+      case "Passport":
+        model[
+          this.props.DvsModel.LicenseType
+        ] = this.props.DvsModel.Passport.PassportNumber;
+        break;
+      default:
+        break;
+    }
+
     return (
       <React.Fragment>
         <Header Title="Confirm Your Details" />
         <br />
-        {Object.keys(model).map(key => (
-          <GridItem KeyProperty={key} ValueProperty={model[key]} />
+        {Object.keys(model).map((key, idx) => (
+          <GridItem key={idx} KeyProperty={key} ValueProperty={model[key]} />
         ))}
         <hr style={{ borderColor: "#1e615d72", borderWidth: "0.5px" }} />
         <br />

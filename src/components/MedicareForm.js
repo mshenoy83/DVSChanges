@@ -18,6 +18,12 @@ class MedicareForm extends React.Component {
     };
   }
 
+  componentDidCatch = (error, errorInfo) => {
+    console.log("Medicare Errors below");
+    console.log(error);
+    console.log(errorInfo);
+  };
+
   onContinue = () => {
     var errArray = [];
     if (this.state.MedicareNumber.trim() === "") {
@@ -187,8 +193,8 @@ class MedicareForm extends React.Component {
             <tr>
               <td>
                 <div className="validation-summary-errors error">
-                  {this.state.FormErrors.map(txt => (
-                    <p>{txt}</p>
+                  {this.state.FormErrors.map((txt, idx) => (
+                    <p key={idx}>{txt}</p>
                   ))}
                 </div>
               </td>

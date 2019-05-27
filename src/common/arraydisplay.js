@@ -11,8 +11,8 @@ class ArrayDisplay extends React.Component {
             flexDirection: "column"
           }}
         >
-          {this.props.Data.map(txt => (
-            <label style={{ marginLeft: "auto", fontWeight: "bold" }}>
+          {this.props.Data.map((txt, idx) => (
+            <label key={idx} style={{ marginLeft: "auto", fontWeight: "bold" }}>
               {txt}
             </label>
           ))}
