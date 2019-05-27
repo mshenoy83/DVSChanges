@@ -95,6 +95,7 @@ class ConfirmIdentity extends React.Component {
         <Footer
           backButtonClick={this.props.BackToSelection}
           ContinueClick={this.onContinue}
+          buttonName="Agree and Submit"
         />
         <br />
         <br />

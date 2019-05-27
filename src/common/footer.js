@@ -12,7 +12,7 @@ class Footer extends React.Component {
         />
         <Button
           classes="button -primary center medium autoleftbutton"
-          buttonName="Continue"
+          buttonName={this.props.buttonName || "Continue"}
           handleClick={this.props.ContinueClick}
         />
       </div>
