@@ -66,24 +66,26 @@ class ConfirmIdentity extends React.Component {
         <br />
         <div style={{ display: "flex" }}>
           <input
+            className="ws-checkbox"
             type="checkbox"
             id="confirm_authorisation"
             onChange={this.handleAuthorisationChecked}
           />
-          <label htmlFor="confirm_authorisation">
+          <label htmlFor="confirm_authorisation" className="ws-checkbox-label">
             I confirm that I am authorised to provide the personal details
             presented and I consent to my information being checked with the
             document issuer or official record holder for the purpose of
             confirming my identity.
           </label>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ marginTop: "10px", display: "flex" }}>
           <input
+            className="ws-checkbox"
             type="checkbox"
             id="confirm_tc"
             onChange={this.handleTncChecked}
           />
-          <label htmlFor="confirm_tc">
+          <label htmlFor="confirm_tc" className="ws-checkbox-label">
             I have read the <a className="tnc-hyperlinks">Privacy</a> and{" "}
             <a className="tnc-hyperlinks">Terms and Conditions</a> and also
             consent to my informationbeing used to verify my identity agaianst

@@ -198,21 +198,21 @@ a:visited:hover {
 }
 
 /* Base for label styling */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+.ws-checkbox:not(:checked),
+.ws-checkbox:checked {
   position: absolute;
   left: -9999px;
 }
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+.ws-checkbox:not(:checked) + label,
+.ws-checkbox:checked + label {
   position: relative;
   padding-left: 1.95em;
   cursor: pointer;
 }
 
 /* checkbox aspect */
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+.ws-checkbox:not(:checked) + label:before,
+.ws-checkbox:checked + label:before {
   content: "";
   position: absolute;
   left: 0;
@@ -225,8 +225,8 @@ a:visited:hover {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 /* checked mark aspect */
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+.ws-checkbox:not(:checked) + label:after,
+.ws-checkbox:checked + label:after {
   content: "\2713\0020";
   position: absolute;
   top: 0.15em;
@@ -237,11 +237,11 @@ a:visited:hover {
   transition: all 0.2s;
 }
 /* checked mark aspect changes */
-[type="checkbox"]:not(:checked) + label:after {
+.ws-checkbox:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
-[type="checkbox"]:checked + label:after {
+.ws-checkbox:checked + label:after {
   opacity: 1;
   transform: scale(1);
 }
