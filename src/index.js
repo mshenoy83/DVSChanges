@@ -50,7 +50,23 @@ class App extends React.Component {
   };
 
   handleBackButtonForms = () => {
-    this.setState({ View: "IdentitySelection" });
+    switch (this.state.View) {
+      case "DriversLicense":
+      case "Medicare":
+      case "Passport":
+        this.setState({ View: "IdentitySelection" });
+        break;
+      case "ConfirmIdentity":
+        if (this.state.IdSelected) {
+          this.setState({ View: this.state.IdSelected });
+        } else {
+          this.setState({ View: "IdentitySelection" });
+        }
+        break;
+      default:
+        this.setState({ View: "IdentitySelection" });
+        break;
+    }
   };
 
   handleDriversLicenseClick = () => {
@@ -68,13 +84,13 @@ class App extends React.Component {
   SaveDocumentModel = (documentModel, idtype) => {
     this.setState({ DVSModel: documentModel, IdSelected: idtype });
     console.log(documentModel);
+    this.setState({ View: "ConfirmIdentity" });
   };
 
   render() {
-    const view = this.state.View;
     let componentView;
 
-    switch (view) {
+    switch (this.state.View) {
       case "IdentitySelection":
         componentView = (
           <SelectIdentityForm
@@ -117,7 +133,7 @@ class App extends React.Component {
         componentView = (
           <ConfirmIdentity
             BackToSelection={this.handleBackButtonForms}
-            PassportModel={this.state.DVSModel.Passport}
+            DvsModel={this.state.DVSModel.Passport}
             onContinue={this.SaveDocumentModel}
           />
         );

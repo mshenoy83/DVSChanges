@@ -8,8 +8,7 @@ class ConfirmIdentity extends React.Component {
     super(props);
     this.state = {
       FormErrors: [],
-      isAuthorisationChecked: false,
-      isTncChecked: false
+      isAuthorisationChecked: false
     };
   }
 
@@ -19,25 +18,12 @@ class ConfirmIdentity extends React.Component {
     });
   };
 
-  handleTncChecked = () => {
-    this.setState({
-      isTncChecked: !this.state.isTncChecked
-    });
-  };
-
   onContinue = () => {
     var errArray = [];
     if (!this.state.isAuthorisationChecked) {
-      errArray.push(
-        "Please confirm that you have the authorisation to provide your personal details."
-      );
+      errArray.push("Please agree to our policies to continue.");
     }
 
-    if (!this.state.isTncChecked) {
-      errArray.push(
-        "Please agree to our terms and conditions and privacy policies to continue."
-      );
-    }
     this.setState({ FormErrors: errArray });
     if (errArray.length > 0) {
       return;
@@ -71,26 +57,13 @@ class ConfirmIdentity extends React.Component {
             onChange={this.handleAuthorisationChecked}
           />
           <label htmlFor="confirm_authorisation" className="ws-checkbox-label">
-            I confirm that I am authorised to provide the personal details
-            presented and I consent to my information being checked with the
-            document issuer or official record holder for the purpose of
-            confirming my identity.
+            I confirm that I am the above mentioned individual and that the
+            information is accurate, complete and not misleading and consent to
+            my identity being verified with a third party identity matching
+            provider.
           </label>
         </div>
-        <div style={{ marginTop: "10px", display: "flex" }}>
-          <input
-            className="ws-checkbox"
-            type="checkbox"
-            id="confirm_tc"
-            onChange={this.handleTncChecked}
-          />
-          <label htmlFor="confirm_tc" className="ws-checkbox-label">
-            I have read the <a className="tnc-hyperlinks">Privacy</a> and{" "}
-            <a className="tnc-hyperlinks">Terms and Conditions</a> and also
-            consent to my informationbeing used to verify my identity agaianst
-            personal information held by a credit reporting agency.
-          </label>
-        </div>
+
         <Footer
           backButtonClick={this.props.BackToSelection}
           ContinueClick={this.onContinue}
@@ -98,9 +71,9 @@ class ConfirmIdentity extends React.Component {
         />
         <br />
         <br />
-        <div>
+        <div className="validation-summary-errors error">
           {this.state.FormErrors.map(txt => (
-            <p className="validation-error-message">{txt}</p>
+            <p>{txt}</p>
           ))}
         </div>
       </React.Fragment>

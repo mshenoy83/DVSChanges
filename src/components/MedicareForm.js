@@ -186,9 +186,9 @@ class MedicareForm extends React.Component {
             </tr>
             <tr>
               <td>
-                <div>
+                <div className="validation-summary-errors error">
                   {this.state.FormErrors.map(txt => (
-                    <p className="validation-error-message">{txt}</p>
+                    <p>{txt}</p>
                   ))}
                 </div>
               </td>
